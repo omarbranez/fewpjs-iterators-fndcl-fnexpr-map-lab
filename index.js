@@ -13,5 +13,12 @@ const tutorials = [
 
 const titleCased = () => {
   // use the .map method on the tutorials to return a new array
-  return tutorials
+  return tutorials.map( tutorial => {
+    const sentences = tutorial.split(' ') // turn sentences into arrays of words
+    const newWords = sentences.map( word => word.charAt(0).toUpperCase() + word.slice(1) ) // get the first letter of each word, capitalize it, and use it to replace the first letter of the word
+    const newTutorial = newWords.join(' ') // turn it back into a sentence
+    return newTutorial  // return that sentence
+  // console.log(tutorials)
+  // return tutorials.map( )
+})
 }
